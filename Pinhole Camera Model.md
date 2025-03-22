@@ -1,4 +1,5 @@
-tags: #computer_vision #ROS
+tags: #computer_vision #ROS #maths 
+related: [[Matrices]]
 # Camera Intrinsics Matrix
 ## Mapping from 3D to 2D
 The mapping from the 3D world to the 2D world is given by the following equations, where $u$ and $v$ represent the x and y coordinates in the image respectively:
@@ -74,14 +75,20 @@ $$
 $$
 
 # Projection Matrix
-The Projection Matrix is a 3x4 matrix used to translate points observed by the camera to the world coordinates, given the pose of the camera in known in the world coordinate system. It takes the form:
+The Projection Matrix is a 3x4 matrix used to translate points observed by the camera to the world coordinates, given the pose of the camera known in the world coordinate system. It takes the form:
 $$
 \mathbf{P} = \mathbf{K} \cdot
 \begin{bmatrix}
 \mathbf{R} | \mathbf{t}
 \end{bmatrix}
 $$
-Expanding to:
+
+Where:
+- $\mathbf{K}$ is the camera *instrinsics* matrix.
+- $\mathbf{R}$ is the *extrinsic* rotation matrix
+- $\mathbf{t}$ is the *extrinsic* translation
+
+We can expand this equation:
 $$
 \mathbf{P} =
 \begin{bmatrix}

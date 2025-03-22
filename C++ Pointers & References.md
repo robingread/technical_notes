@@ -10,7 +10,7 @@ int *ip = &x;
 
 In doing this, the variable `ip` now holds the address of the variable `x`.
 
-De-referencing
+## De-referencing:
 ```c++
 int y;
 y = *ip;
